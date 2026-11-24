@@ -18,6 +18,8 @@ EMOJI = "\U0001F305"  # SUNRISE — U+1F305, one character, 4 bytes UTF-8
 
 
 def main() -> None:
+    if len(EMOJI) != 1:
+        raise SystemExit("entry must be exactly one emoji")
     out_dir = os.environ.get("OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
